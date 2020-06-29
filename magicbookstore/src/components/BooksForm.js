@@ -1,13 +1,21 @@
 import React from "react";
+// import PropTypes from "prop-types";
+
+const CATEGORIES = [
+  "Action",
+  "Biography",
+  "History",
+  "Horror",
+  "Kids",
+  "Learning",
+  "Sci-Fi"
+];
 
 class BooksForm extends React.Component {
   state = {
     title: "",
     category: ""
   };
-
-  // this.handleChange = this.handleChange.bind(this);
-  // this.handleSubmit = this.handleSubmit.bind(this);
 
   handleChange = e => {
     const { name, value } = e.target;
@@ -42,7 +50,7 @@ class BooksForm extends React.Component {
             onChange={this.handleChange}
           />
         </label>
-        <label>
+        {/* <label>
           Category:
           <input
             type="text"
@@ -50,7 +58,20 @@ class BooksForm extends React.Component {
             value={category}
             onChange={this.handleChange}
           />
-        </label>
+        </label> */}
+        <select
+          name="category"
+          value={category}
+          onChange={this.handleChange}
+          id=""
+        >
+          <option defaultValue="">Choose a category</option>
+          {CATEGORIES.map(category => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
         <input type="submit" value="Submit" />
       </form>
     );
