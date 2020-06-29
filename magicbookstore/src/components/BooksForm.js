@@ -12,10 +12,7 @@ const CATEGORIES = [
 ];
 
 class BooksForm extends React.Component {
-  state = {
-    title: "",
-    category: ""
-  };
+  state = { title: "", category: "" };
 
   handleChange = e => {
     const { name, value } = e.target;
