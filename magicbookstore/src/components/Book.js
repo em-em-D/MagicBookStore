@@ -6,6 +6,7 @@ const Book = props => {
   return (
     <div>
       <div>
+        {book.id}
         {book.title}
         {book.category}
       </div>
