@@ -28,7 +28,7 @@ class BooksForm extends React.Component {
     e.preventDefault();
     const { title, category } = this.state;
     if (title && category) {
-      console.log(title, category);
+      // console.log(title, category);
       this.setState({
         title: '',
         category: '',
@@ -41,7 +41,7 @@ class BooksForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
+        <label htmlFor>
           Title:
           <input
             type="text"

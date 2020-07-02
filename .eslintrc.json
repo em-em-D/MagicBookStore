@@ -20,7 +20,5 @@
     "arrow-parens": ["error", "as-needed"]
   },
   "ignorePatterns": ["dist/", "build/"],
-"parser": "babel-eslint"
+  "parser": "babel-eslint"
 }
-
-
