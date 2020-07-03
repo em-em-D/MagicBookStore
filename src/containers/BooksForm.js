@@ -1,25 +1,25 @@
-import React from "react";
+import React from 'react';
 
 const CATEGORIES = [
-  "Action",
-  "Biography",
-  "History",
-  "Horror",
-  "Kids",
-  "Learning",
-  "Sci-Fi"
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
 ];
 
 class BooksForm extends React.Component {
   constructor() {
     super();
-    this.state = { title: "", category: "" };
+    this.state = { title: '', category: '' };
   }
 
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -28,8 +28,8 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
     if (title && category) {
       this.setState({
-        title: "",
-        category: ""
+        title: '',
+        category: '',
       });
     }
   };
