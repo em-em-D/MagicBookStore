@@ -12,7 +12,6 @@ const BooksList = ({ books }) => (
   <div>
     <div>
       {books.map(book => (
-        // <Book key={book.id} {...book} />
         <Book key={book.id} book={book} />
       ))}
     </div>
@@ -29,5 +28,4 @@ BooksList.propTypes = {
   ).isRequired,
 };
 
-// export default BooksList;
 export default connect(mapStateToProps, null)(BooksList);
