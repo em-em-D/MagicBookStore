@@ -1,6 +1,9 @@
+
+import getId from '../utils/getId'
+
 export const createBook = (title, category) => ({
   type: 'CREATE_BOOK',
-  id: 0,
+  id: getId(),
   title,
   category,
 });

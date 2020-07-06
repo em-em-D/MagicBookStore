@@ -5,11 +5,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 import App from './App';
+import getId from './utils/getId';
 
 const initialState = {
   books: [
-    { id: 1, title: 'The Last Flight', category: 'Action' },
-    { id: 2, title: 'Chronicles of Narnia', category: 'History' },
+    { id: getId(), title: 'The Last Flight', category: 'Action' },
+    { id: getId(), title: 'Chronicles of Narnia', category: 'History' },
   ],
 };
 

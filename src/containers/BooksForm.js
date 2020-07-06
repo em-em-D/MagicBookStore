@@ -1,4 +1,6 @@
 import React from 'react';
+import { createBook } from "../actions";
+import { connect } from "react-redux";
 
 const CATEGORIES = [
   'Action',
@@ -26,7 +28,10 @@ class BooksForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const { title, category } = this.state;
+    const { createBook } = this.props;
+
     if (title && category) {
+createBook(title, category);
       this.setState({
         title: '',
         category: '',
@@ -39,15 +44,15 @@ class BooksForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor>
-          Title:
+        {/* <label htmlFor> */}
+          {/* Title: */}
           <input
             type="text"
             name="title"
             value={title}
             onChange={this.handleChange}
           />
-        </label>
+        {/* </label> */}
         <select
           name="category"
           value={category}
@@ -67,4 +72,4 @@ class BooksForm extends React.Component {
   }
 }
 
-export default BooksForm;
+export default connect(null, { createBook }) (BooksForm);
