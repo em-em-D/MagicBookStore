@@ -1,6 +1,7 @@
 import React from 'react';
-import { createBook } from "../actions";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions';
 
 const CATEGORIES = [
   'Action',
@@ -31,7 +32,7 @@ class BooksForm extends React.Component {
     const { createBook } = this.props;
 
     if (title && category) {
-createBook(title, category);
+      createBook(title, category);
       this.setState({
         title: '',
         category: '',
@@ -45,13 +46,13 @@ createBook(title, category);
     return (
       <form onSubmit={this.handleSubmit}>
         {/* <label htmlFor> */}
-          {/* Title: */}
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={this.handleChange}
-          />
+        {/* Title: */}
+        <input
+          type="text"
+          name="title"
+          value={title}
+          onChange={this.handleChange}
+        />
         {/* </label> */}
         <select
           name="category"
@@ -72,4 +73,8 @@ createBook(title, category);
   }
 }
 
-export default connect(null, { createBook }) (BooksForm);
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
+
+export default connect(null, { createBook })(BooksForm);

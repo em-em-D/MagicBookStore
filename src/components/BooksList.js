@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from './Book';
-import { removeBook } from "../actions";
+import { removeBook } from '../actions';
 
 function mapStateToProps(state) {
   const { books } = state;
@@ -10,9 +10,9 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  removeBook: id => dispatch(removeBook(id))
+  removeBook: id => dispatch(removeBook(id)),
 });
-const BooksList = ({ books }) => (
+const BooksList = ({ books, removeBook }) => (
   <div>
     <div>
       {books.map(book => (
@@ -30,7 +30,7 @@ BooksList.propTypes = {
       category: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
-  removeBook: PropTypes.func.isRequired
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

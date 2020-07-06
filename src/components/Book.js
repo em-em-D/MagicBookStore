@@ -11,11 +11,11 @@ const Book = props => {
         {book.id}
         {book.title}
         {book.category}
-        
+
         <button type="button" onClick={handleRemoveBook} className="remove">
           Remove
         </button>
-      
+
       </div>
     </div>
   );
@@ -27,6 +27,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default Book;
