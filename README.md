@@ -1,4 +1,4 @@
-# Magic Book Store CMS
+# Magic Book Store 
 
 This App creates a book store and maintains the book details category-wise. A user can view all the books as a list or view the books depending on category of a book.
 
