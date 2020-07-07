@@ -12,6 +12,7 @@ const initialState = {
     { id: getId(), title: 'The Last Flight', category: 'Action' },
     { id: getId(), title: 'Chronicles of Narnia', category: 'History' },
   ],
+  filter: "All"
 };
 
 const store = createStore(reducer, initialState);
@@ -22,3 +23,4 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 );
+
