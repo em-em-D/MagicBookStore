@@ -45,8 +45,6 @@ class BooksForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        {/* <label htmlFor> */}
-        {/* Title: */}
         <input
           type="text"
           name="title"

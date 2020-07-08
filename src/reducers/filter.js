@@ -1,34 +1,13 @@
-import react from 'react';
-import PropTypes from 'prop-types';
+const filter = (state = 'All', action) => {
+  switch (action.type) {
+    case 'CHANGE_FILTER':
 
-const CATEGORIES = [
-    'Action',
-    'Biography',
-    'History',
-    'Horror',
-    'Kids',
-    'Learning',
-    'Sci-Fi',
-];
+      return action.filter;
 
-const CategoryFilter = ({ handleChange }) => {
-    return (
-        <div>
-            <span>Choose the Category to view</span>
-            <select
-                onChange={handleChange}
-            >
-                <option value="All">All</option>
-                {CATEGORIES.map(e => (
-                    <option key={e} value={e}>
-                        {e}
-                    </option>
-                ))}
-            </select>
-        </div>
-    );
+    default:
+      break;
+  }
+  return state;
 };
 
-CategoryFilter.prototype = { handleChange: PropTypes.func.isRequired };
-
-export default CategoryFilter;
+export default filter;
