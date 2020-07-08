@@ -37,6 +37,7 @@ const BooksList = ({
     </div>
   );
 };
+
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
