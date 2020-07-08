@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions';
 
-
 function mapStateToProps(state) {
   const { books, filter } = state;
   return { books, filter };
@@ -12,18 +11,19 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = dispatch => ({
   removeBook: id => dispatch(removeBook(id)),
-  changeFilter: value => dispatch(changeFilter(value))
+  changeFilter: value => dispatch(changeFilter(value)),
 });
-const BooksList = ({ books, removeBook, filter, changeFilter }) =>
-  (
+const BooksList = ({
+  books, removeBook,
+}) => (
+  <div>
     <div>
-      <div>
-        {books.map(book => (
-          <Book key={book.id} book={book} removeBook={removeBook} />
-        ))}
-      </div>
+      {books.map(book => (
+        <Book key={book.id} book={book} removeBook={removeBook} />
+      ))}
     </div>
-  );
+  </div>
+);
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
