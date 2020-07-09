@@ -26,7 +26,7 @@ const BooksList = ({
   const filteredBooks = () => (filter === 'All' ? books : books.filter(book => book.category === filter));
 
   return (
-    <div>
+    <div className="books-list">
       <CategoryFilter handleChange={handleFilterChange} />
       <div>
 
