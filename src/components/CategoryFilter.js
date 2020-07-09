@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './CategoryFilter.css';
 
 const CATEGORIES = [
   'Action',
@@ -12,9 +13,10 @@ const CATEGORIES = [
 ];
 
 const CategoryFilter = ({ handleChange }) => (
-  <div>
+  <div className="category-filter">
     <span>Choose the Category to view</span>
     <select
+      className="select"
       onChange={handleChange}
     >
       <option value="All">All</option>
